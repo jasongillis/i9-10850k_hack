@@ -15,6 +15,15 @@ Neofetch output:
 System about dialog:
 ![about](images/about.png)
 
+# Working
+
+- [x] iServices
+- [x] DRM / dGPU / iGPU
+- [x] Sleep/Wake
+- [x] Audio
+- [x] MSI Mystic Light via OpenRGB on JRAINBOW1
+- [x] Intel I219-V Ethernet
+
 # Kexts
 
 - Lilu
@@ -30,16 +39,22 @@ System about dialog:
 - USBToolBox
 - UTBMap
 
+# DSDT
+
+[DSDT](DSDT.aml) extracted by SSDTTime.
+
 # Notes
 
 Start [here](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#starting-point)
 
-[DSDT](DSDT.aml) extracted by SSDTTime.
+Encountered a boot loop when OpenCore started to load the installer
+until I fixed the USB map.  I had done the USB map already, but had
+done something incorrect, so the installer didn't like it.
+
 
 - OpenCore Version: 0.9.5
 - BIOS Version:  `E7C80IMS.1D0`
 - BIOS Settings
-  - Enable Resizeable BAR Support
   - Settings
     - Advanced
       - PCIe/PCI Sub-system Settings
