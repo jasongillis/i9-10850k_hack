@@ -23,6 +23,7 @@ System about dialog:
 - [x] Audio
 - [x] MSI Mystic Light via OpenRGB on JRAINBOW1
 - [x] Intel I219-V Ethernet
+- [x] System updates
 
 # Kexts
 
@@ -51,6 +52,11 @@ Encountered a boot loop when OpenCore started to load the installer
 until I fixed the USB map.  I had done the USB map already, but had
 done something incorrect, so the installer didn't like it.
 
+Eventually noticed that I wasn't getting OS updates pushed.  This required adding `revpatch=sbvmm` to `boot-args` in `config.plist`.
+
+Installing updates after 14.3.1 required setting `SecureBootModel` to `Disabled` in `config.plist`.  This did not require a restart before starting the installer.  It did require a restart after the install completed and the setting was reverted back to `Default`.
+
+## BIOS Settings
 
 - OpenCore Version: 0.9.5
 - BIOS Version:  `E7C80IMS.1D0`
@@ -116,7 +122,7 @@ done something incorrect, so the installer didn't like it.
       - Disable VT-d
       - Disable SGX
 
-# USB Port Mapping
+## USB Port Mapping
 
 Info used for USBToolBox
 
