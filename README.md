@@ -56,6 +56,8 @@ Eventually noticed that I wasn't getting OS updates pushed.  This required addin
 
 Installing updates after 14.3.1 required setting `SecureBootModel` to `Disabled` in `config.plist`.  This did not require a restart before starting the installer.  It did require a restart after the install completed and the setting was reverted back to `Default`.
 
+Post Sonoma 14.7, sleep stopped working completely.  USB would partially shutdown (the StreamDeck would disconnect) and the display would power off.  But, the system didn't sleep; it would stay awake.  Had to add `SSDT-GPRW.aml` and an ACPI patch to fix this.  From [this bit of OpenCore Post-Install](https://dortania.github.io/OpenCore-Post-Install/usb/misc/instant-wake.html) via [this r/hackintosh thread](https://www.reddit.com/r/hackintosh/comments/m8oime/how_to_fix_sleep_issue_causing_darkwake_from/).
+
 ## BIOS Settings
 
 - OpenCore Version: 0.9.5
